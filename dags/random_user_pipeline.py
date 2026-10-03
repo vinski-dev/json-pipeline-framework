@@ -25,7 +25,7 @@ default_args = {
 }
 
 @dag(
-    schedule_interval='0 */2 * * *',
+    schedule='0 */2 * * *',
     start_date=datetime(2026, 10, 3),
     catchup=False,
     default_args=default_args,

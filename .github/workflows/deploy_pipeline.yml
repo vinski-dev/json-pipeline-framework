@@ -19,7 +19,7 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          pip install apache-airflow==2.7.1 pytest flake8 dbt-postgres
+          pip install apache-airflow==2.7.1 "pendulum<3.0" pytest flake8 dbt-postgres
 
       - name: Lint Python Code
         run: flake8 dags/ --max-line-length=120
