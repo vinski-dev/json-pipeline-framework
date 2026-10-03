@@ -2,3 +2,4 @@ apache-airflow==2.7.2
 pandas==2.1.1
 requests==2.31.0
 psycopg2-binary==2.9.9
+google-re2==1.1

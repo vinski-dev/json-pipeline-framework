@@ -94,7 +94,6 @@ def random_user_bronze_ingestion():
         task_id='dbt_transform_gold',
         bash_command='dbt run --select gold_user_demographics --project-dir /opt/airflow/include/dbt_project --profiles-dir /opt/airflow/include/dbt_project',
     )
-
     
     # Task Graph Definition
     staged_file = extract_from_api()
@@ -103,6 +102,7 @@ def random_user_bronze_ingestion():
 
     # Set the execution pipeline order
     load_status >> dbt_transform_silver >> dbt_test_silver >> dbt_transform_gold >> cleanup_task
+
 
 # Instantiate DAG
 dag_instance = random_user_bronze_ingestion()
