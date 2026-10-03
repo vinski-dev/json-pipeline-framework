@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: silver_users
+    description: "Cleaned and standardized user data from the bronze layer."
+    columns:
+      - name: _pipeline_record_hash
+        description: "The unique deterministic hash for each record."
+        tests:
+          - unique
+          - not_null

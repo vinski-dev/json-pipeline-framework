@@ -1,0 +1,9 @@
+name: 'random_user_transformations'
+version: '1.0.0'
+config-version: 2
+profile: 'my_postgres_db'
+model-paths: ["models"]
+
+models:
+  random_user_transformations:
+    +materialized: table

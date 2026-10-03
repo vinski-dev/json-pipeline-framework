@@ -1,0 +1,34 @@
+# -----------------------
+# Python & Virtual Envs
+# -----------------------
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.venv/
+.pytest_cache/
+
+# -----------------------
+# Airflow & Docker
+# -----------------------
+logs/
+plugins/__pycache__/
+dags/__pycache__/
+airflow-webserver.pid
+airflow.db
+.env
+
+# -----------------------
+# dbt (Data Build Tool)
+# -----------------------
+include/dbt_project/target/
+include/dbt_project/dbt_packages/
+include/dbt_project/logs/
+
+# -----------------------
+# IDEs & OS Files
+# -----------------------
+.vscode/
+.idea/
+.DS_Store

@@ -1,0 +1,12 @@
+my_postgres_db:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: host.docker.internal
+      user: postgres
+      password: 14myNmax2021  # Change to your local Postgres password
+      port: 5432
+      dbname: analytics_lab
+      schema: public
+      threads: 1
