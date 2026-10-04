@@ -8,10 +8,24 @@ on:
 jobs:
   test_pipeline:
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:13
+        env:
+          POSTGRES_USER: airflow # <-- Update to match profiles.yml
+          POSTGRES_PASSWORD: 14myNmax2021 # <-- Update to match profiles.yml
+          POSTGRES_DB: analytics_lab # <-- Update to match profiles.yml
+        ports:
+          - 5432:5432
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
 
+        # 2. ADD THIS STEP:
+      - name: Fix Docker Hostname for dbt
+        run: echo "127.0.0.1 host.docker.internal" | sudo tee -a /etc/hosts
+        # (Keep your existing Setup Python, Pip Install, and dbt steps here)
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
