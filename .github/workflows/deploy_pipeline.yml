@@ -12,7 +12,7 @@ jobs:
       postgres:
         image: postgres:13
         env:
-          POSTGRES_USER: airflow # <-- Update to match profiles.yml
+          POSTGRES_USER: postgres # <-- Update to match profiles.yml
           POSTGRES_PASSWORD: 14myNmax2021 # <-- Update to match profiles.yml
           POSTGRES_DB: analytics_lab # <-- Update to match profiles.yml
         ports:
