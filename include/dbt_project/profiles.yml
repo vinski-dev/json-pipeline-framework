@@ -3,7 +3,7 @@ my_postgres_db:
   outputs:
     dev:
       type: postgres
-      host: host.docker.internal
+      host: localhost
       user: postgres
       password: 14myNmax2021  # Change to your local Postgres password
       port: 5432
