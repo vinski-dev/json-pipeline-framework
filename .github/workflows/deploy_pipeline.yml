@@ -15,11 +15,11 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
       - name: Install Dependencies
         run: |
-          pip install apache-airflow==2.7.1 "pendulum<3.0" pytest flake8 dbt-postgres
+          pip install apache-airflow==2.7.1 "pendulum<3.0" "numpy<2.0.0" pytest flake8 dbt-postgres pandas requests psycopg2-binary
 
       - name: Lint Python Code
         run: flake8 dags/ --max-line-length=120
@@ -29,7 +29,5 @@ jobs:
 
       - name: Compile dbt Models
         run: dbt compile --project-dir include/dbt_project --profiles-dir include/dbt_project
-        # Note: In a real CI environment, you would mock your profiles.yml 
+        # Note: In a real CI environment, you would mock your profiles.yml
         # so it doesn't require an actual database connection just to compile.
-
-  
