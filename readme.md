@@ -29,7 +29,7 @@ Automated Alerting: Airflow is configured with an SMTP backend to immediately di
 Strict Dependency Management: Explicit version locking (e.g., pendulum<3.0, numpy<2.0.0) to guarantee binary compatibility across local and cloud environments.
 
 📂 Project Structure
-
+```text
 json-pipeline-framework/
 ├── .github/
 │   └── workflows/
@@ -44,6 +44,7 @@ json-pipeline-framework/
 ├── docker-compose.yaml           # Airflow & Database container orchestration
 ├── .gitignore                    # Security and environment exclusion rules
 └── README.md
+
 
 
 🚀 Local Setup & Installation
