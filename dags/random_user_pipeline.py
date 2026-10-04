@@ -1,3 +1,4 @@
+from postgres_engine import insert_idempotent_bronze
 from airflow.decorators import dag, task
 from datetime import datetime, timedelta
 import requests
@@ -12,8 +13,6 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '../include'))
 
 # For Docker execution
 sys.path.append('/opt/airflow/include')
-
-from postgres_engine import insert_idempotent_bronze
 
 
 default_args = {
