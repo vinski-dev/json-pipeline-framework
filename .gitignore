@@ -32,3 +32,4 @@ include/dbt_project/logs/
 .vscode/
 .idea/
 .DS_Store
+project_readme.md
